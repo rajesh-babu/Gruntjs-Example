@@ -2,7 +2,7 @@
 Basic example to implement Gruntjs for Web Apps
 
 
-Follow the steps to setup standalone node web server:
+# Follow the steps to setup standalone node web server:
 
 You can download the source and execute the project in Nodejs server
 
