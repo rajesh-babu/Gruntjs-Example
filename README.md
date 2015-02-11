@@ -35,8 +35,10 @@ You can now go to http://localhost:8080/yourfile.html
 Create .gitconfig file in c:\users\<username>\ and place the below settings
 
 [http]
+
     proxy = http://<username>:<pass>@<proxy URL>:<Port No>
 [https]
+
     proxy = http://<username>:<pass>@<proxy URL>:<Port No>
     
 
