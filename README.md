@@ -3,6 +3,9 @@ Basic example to implement Gruntjs for Web Apps.
 
 You can download the source and execute the project in Nodejs server
 
+Type the below commands in command prompt
+
+
 >npm install 
 
 >grunt serve // to run the project for development
