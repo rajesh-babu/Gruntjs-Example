@@ -41,12 +41,12 @@ Create .gitconfig file in c:\users\<username>\ and place the below settings
     
 
 Execute the below commands in command prompt    
-npm config set proxy http://<username>:<pass>@<proxy URL>:<Port No>
+"npm config set proxy http://<username>:<pass>@<proxy URL>:<Port No>"
 
-npm config set https-proxy http://<username>:<pass>@<proxy URL>:<Port No>
+"npm config set https-proxy http://<username>:<pass>@<proxy URL>:<Port No>"
 
-git config --global http.proxy http://<username>:<pass>@<proxy URL>:<Port No>
+"git config --global http.proxy http://<username>:<pass>@<proxy URL>:<Port No>"
 
-git config --global https.proxy https://<username>:<pass>@<proxy URL>:<Port No>
+"git config --global https.proxy https://<username>:<pass>@<proxy URL>:<Port No>"
 
 
