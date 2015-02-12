@@ -1,0 +1,11 @@
+#disputes_main {
+	.alert.error {
+	  display: block;
+	}	
+	.alert {
+		@include border-radius(3px);
+	    font-size: 13px;
+	    font-weight: bold;
+	    margin: 10px 0;
+	}
+}
