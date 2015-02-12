@@ -18,6 +18,7 @@ module.exports = function (grunt) {
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
 	root: '',
+    scss: 'app/styles/scss',
     dist: 'dist'
   };
 
@@ -33,6 +34,13 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      sass: {
+		files: ['<%= appConfig.scss %>/{,*/}*.scss'],
+		tasks: ['sass:dist'],
+		options: {
+			livereload: '<%= connect.options.livereload %>'
+		}
+	},
       js: {
         files: ['<%= appConfig.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -355,7 +363,19 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
-    }
+    },
+	 // SASS
+	sass: {
+		dist: {
+			options: {
+				style: 'compressed',
+				compass: false
+			},
+			files: {
+				'<%= appConfig.app %>/styles/main.css': '<%= appConfig.scss %>/main.scss'
+			}
+		}
+	}
   });
 
 
@@ -406,6 +426,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
+    'sass:dist',
     'test',
     'build'
   ]);
