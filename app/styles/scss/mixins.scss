@@ -1,0 +1,89 @@
+/* Mixins */
+
+// RESETS
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+
+// GRADIENTS
+
+@mixin table-gradient() {
+    background: #e5e5e5;
+    background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradient($from,$to,$fromPercent,$toPercent) {
+  background: $from;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr= '#{$to}',GradientType=0);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($fromPercent,$from), color-stop($toPercent,$to));
+  background: -webkit-linear-gradient(top,  $from $fromPercent,$to $toPercent);
+  background: -o-linear-gradient(top,  $from $fromPercent,$to $toPercent);
+  background: -ms-linear-gradient(top,  $from $fromPercent,$to $toPercent);
+  background: linear-gradient(to bottom,  $from $fromPercent,$to $toPercent);
+  background: -moz-linear-gradient(top, $from $fromPercent, $to $toPercent);
+}
+
+// BORDER RADIUS
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius; 
+    -moz-border-radius: $radius; 
+}
+
+@mixin border-top-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-top-left-radius($radius);
+}
+
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-right-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+
+@mixin border-top-left-radius($radius) {
+  border-top-left-radius:          $radius;
+  -webkit-border-top-left-radius:  $radius;
+  -moz-border-radius-topleft:      $radius;
+}
+
+@mixin border-top-right-radius($radius) {
+  border-top-right-radius:          $radius;
+  -webkit-border-top-right-radius:  $radius;
+  -moz-border-radius-topright:      $radius;
+}
+
+@mixin border-bottom-left-radius($radius) {
+  border-bottom-left-radius:          $radius;
+  -webkit-border-bottom-left-radius:  $radius;
+  -moz-border-radius-bottomleft:      $radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+  border-bottom-right-radius:          $radius;
+  -webkit-border-bottom-right-radius:  $radius;
+  -moz-border-radius-bottomright:      $radius;
+}
+
+
+// BOX SHADOW
+
+@mixin box-shadow() {
+    -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25); 
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
